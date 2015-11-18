@@ -16,6 +16,75 @@ http://localhost:8080/orbit/order
 
 for get or post requests.
 
+Sample request for POST
+----------------------
+
+{
+   "customerName": "Kinnary",
+   "dealName": "Hello 3",
+   "orderType": "testorderType",
+   "chargeType": "chargeType",
+   "status": "status",
+   "orderItemsList": [   {
+      "cashFlag": 1,
+      "chargeCode": "chargeCode",
+      "chargeRate": 1,
+      "quantity": 2,
+      "chargeAmount": 1,
+      "chargeDetail": "chargeDetail",
+      "date": null,
+      "account": 1
+   }]
+}
+
+Sample response for POST or GET
+-------------------------------
+
+
+{
+   "orderId": 1,
+   "customerName": "Kinnary",
+   "dealName": "Hello 3",
+   "orderType": "testorderType",
+   "chargeType": "chargeType",
+   "status": "status",
+   "orderItemsList": [   {
+      "orderItemId": 1,
+      "cashFlag": 1,
+      "chargeCode": "chargeCode",
+      "chargeRate": 1,
+      "quantity": 2,
+      "chargeAmount": 1,
+      "chargeDetail": "chargeDetail",
+      "date": null,
+      "account": 1
+   }]
+}
+
+Sample request for POST when an update is required (Please note that the PUT is not configured)
+
+{
+    "orderId": 1,
+    "customerName": "Kinnary",
+    "dealName": "Hello 3",
+    "orderType": "testorderType",
+    "chargeType": "chargeType",
+    "status": "status",
+    "orderItemsList": [
+        {
+        	"orderItemId": 3,
+            "cashFlag": 1,
+            "chargeCode": "chargeCode",
+            "chargeRate": 1,
+            "quantity": 2,
+            "chargeAmount": 1,
+            "chargeDetail": "chargeDetail",
+            "date": null,
+            "account": 1
+        }
+    ]
+}
+
 Work in progress
 ----------------
 
