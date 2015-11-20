@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,13 +20,15 @@ public class OrderItems {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long orderItemId;
 
-    private int cashFlag;
+    private boolean cashFlag;
     private String chargeCode;
     private Long chargeRate;
     private Long quantity;
     private Long chargeAmount;
     private String chargeDetail;
-    private Date date;
+
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    private DateTime date;
     private Long account;
 
     @ManyToOne
@@ -67,12 +71,23 @@ public class OrderItems {
         this.modificationTime = modificationTime;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("MM/dd/yyyy");
+        return dtf.print(date);
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(String date) {
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("MM/dd/yyyy");
+        this.date = dtf.parseDateTime(date);
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 
     public long getOrderItemId() {
@@ -83,11 +98,11 @@ public class OrderItems {
         this.orderItemId = orderItemId;
     }
 
-    public int getCashFlag() {
+    public boolean isCashFlag() {
         return cashFlag;
     }
 
-    public void setCashFlag(int cashFlag) {
+    public void setCashFlag(boolean cashFlag) {
         this.cashFlag = cashFlag;
     }
 

@@ -22,7 +22,7 @@ public class Orders {
     private long orderId;
 
     private String customerName;
-    private String dealName;
+    private long dealName;
     private String orderType;
     private String chargeType;
     private String status;
@@ -92,11 +92,11 @@ public class Orders {
         this.customerName = customerName;
     }
 
-    public String getDealName() {
+    public long getDealName() {
         return dealName;
     }
 
-    public void setDealName(String dealName) {
+    public void setDealName(long dealName) {
         this.dealName = dealName;
     }
 
