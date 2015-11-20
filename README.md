@@ -21,18 +21,18 @@ Sample request for POST
 
 {
    "customerName": "Kinnary",
-   "dealName": "Hello 3",
+   "dealName": 1,
    "orderType": "testorderType",
    "chargeType": "chargeType",
    "status": "status",
    "orderItemsList": [   {
-      "cashFlag": 1,
+      "cashFlag": true,
       "chargeCode": "chargeCode",
       "chargeRate": 1,
       "quantity": 2,
       "chargeAmount": 1,
       "chargeDetail": "chargeDetail",
-      "date": null,
+      "date": "11/11/1987",
       "account": 1
    }]
 }
@@ -44,19 +44,19 @@ Sample response for POST or GET
 {
    "orderId": 1,
    "customerName": "Kinnary",
-   "dealName": "Hello 3",
+   "dealName": 1,
    "orderType": "testorderType",
    "chargeType": "chargeType",
    "status": "status",
    "orderItemsList": [   {
       "orderItemId": 1,
-      "cashFlag": 1,
+      "cashFlag": true,
       "chargeCode": "chargeCode",
       "chargeRate": 1,
       "quantity": 2,
       "chargeAmount": 1,
       "chargeDetail": "chargeDetail",
-      "date": null,
+      "date": "11/11/1987",
       "account": 1
    }]
 }
@@ -64,26 +64,71 @@ Sample response for POST or GET
 Sample request for POST when an update is required (Please note that the PUT is not configured)
 
 {
-    "orderId": 1,
-    "customerName": "Kinnary",
-    "dealName": "Hello 3",
-    "orderType": "testorderType",
-    "chargeType": "chargeType",
-    "status": "status",
-    "orderItemsList": [
-        {
-        	"orderItemId": 3,
-            "cashFlag": 1,
-            "chargeCode": "chargeCode",
-            "chargeRate": 1,
-            "quantity": 2,
-            "chargeAmount": 1,
-            "chargeDetail": "chargeDetail",
-            "date": null,
-            "account": 1
-        }
-    ]
+   "orderId": 1,
+   "customerName": "Kinnary 2",
+   "dealName": 1,
+   "orderType": "testorderType",
+   "chargeType": "chargeType",
+   "status": "status",
+   "orderItemsList": [   {
+   	 "orderItemId": 1,
+      "cashFlag": false,
+      "chargeCode": "chargeCode",
+      "chargeRate": 1,
+      "quantity": 2,
+      "chargeAmount": 1,
+      "chargeDetail": "chargeDetail",
+      "date": "11/11/1987",
+      "account": 1
+   }]
 }
+
+localhost:8080/orbit/deal
+
+for GET response
+
+[
+      {
+      "dealId": 1,
+      "customerName": "Customer 1",
+      "dealMaker": "Deal maker 1",
+      "description": "Description 1",
+      "project": "Project A",
+      "dealDate": "11/20/2015"
+   },
+      {
+      "dealId": 2,
+      "customerName": "Customer 2",
+      "dealMaker": "Deal maker 2",
+      "description": "Description 2",
+      "project": "Project A",
+      "dealDate": "11/20/2015"
+   },
+      {
+      "dealId": 3,
+      "customerName": "Customer 3",
+      "dealMaker": "Deal maker 3",
+      "description": "Description 3",
+      "project": "Project A",
+      "dealDate": "11/20/2015"
+   },
+      {
+      "dealId": 4,
+      "customerName": "Customer 4",
+      "dealMaker": "Deal maker 4",
+      "description": "Description 4",
+      "project": "Project A",
+      "dealDate": "11/20/2015"
+   },
+      {
+      "dealId": 5,
+      "customerName": "Customer 5",
+      "dealMaker": "Deal maker 5",
+      "description": "Description 5",
+      "project": "Project A",
+      "dealDate": "11/20/2015"
+   }
+]
 
 Work in progress
 ----------------
