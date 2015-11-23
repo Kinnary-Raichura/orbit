@@ -6,10 +6,7 @@ import com.nexient.nbcu.orbit.service.DealService;
 import com.nexient.nbcu.orbit.service.OrderService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -17,6 +14,8 @@ import java.util.Collection;
  * Created by kraichura on 11/20/2015.
  */
 @RestController
+@CrossOrigin
+
 @RequestMapping("/orbit/deal")
 public class DealController {
     @Autowired
